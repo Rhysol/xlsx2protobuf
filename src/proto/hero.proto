@@ -1,0 +1,31 @@
+syntax = "proto3";
+package TableProto;
+
+message hero {
+    int64 i_d = 1;
+    string name = 2;
+    string initials = 3;
+    int64 type = 4;
+    int64 level = 5;
+    int64 base_skill = 6;
+    int64 battle = 7;
+    int64 develop = 8;
+    int64 auxiliary = 9;
+    int64 battle_base = 10;
+    int64 develop_base = 11;
+    int64 auxiliary_base = 12;
+    int64 battle_step = 13;
+    int64 develop_step = 14;
+    int64 auxiliary_step = 15;
+    int64 battle_extra = 16;
+    int64 develop_extra = 17;
+    int64 auxiliary_extra = 18;
+    int64 item_i_d = 19;
+    int64 item_count = 20;
+    int64 exchange_item_i_d = 21;
+    string tab = 22;
+    string des = 23;
+    int64 pic = 24;
+    int64 show_hero = 25;
+    repeated int64 recomme_skill = 26;
+}
