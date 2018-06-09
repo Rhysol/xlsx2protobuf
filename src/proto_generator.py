@@ -1,6 +1,4 @@
-import xlrd
-import re
-from enum import Enum
+import os
 
 from sheet_structure import CellType
 
@@ -8,7 +6,7 @@ from sheet_structure import CellType
 class ProtoGenerator:
 
     def __init__(self):
-        self.output_dir = "./proto/"
+        self.output_dir = "../proto/"
         self.proto_package_name = ""
         self.sheet_structure_obj = None
 

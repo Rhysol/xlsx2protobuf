@@ -1,0 +1,10 @@
+syntax = "proto3";
+package TableProto;
+
+message example {
+    int64 int_column = 1;
+    string string_column = 2;
+    repeated int64 int_array_column = 3;
+    repeated string string_array_column = 4;
+    int64 date_column = 5;
+}

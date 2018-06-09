@@ -68,7 +68,13 @@ class SheetStructure:
                 print("column:%d, column_name can't be empty" % column)
                 exit(0)
             self.columns_name.append(column_name)
-            column_type = get_cell_type(sheet.cell(2, column))
+            cell = sheet.cell(2, column)
+            if cell.value is ";":
+                for row in range(3, sheet.nrows):
+                    cell = sheet.cell(row, column)
+                    if cell.value is not ";":
+                        break
+            column_type = get_cell_type(cell)
             if column_type is CellType.ERROR.value:
                 print("column:%d data type error" % column)
                 exit(0)
