@@ -14,7 +14,7 @@ python generate.py
 ```
 
 # Configuration
-The config file path is xlsx2protobuf/src/config.ini. Put the \*.xlsx files in the **table** folder.
+The config file path is **xlsx2protobuf/src/config.ini**. Put the \*.xlsx files in the **table** folder.
 Then execute the follow command:
 ```
 python generate.py
