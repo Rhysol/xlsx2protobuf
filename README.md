@@ -1,6 +1,11 @@
 # xlsx2protobuf
 convert xlsx to .proto file and binary data file
 
+# Requirement
+```
+pip install xlrd
+```
+
 # Usage
 ```
 git clone https://github.com/Rhysol/xlsx2protobuf.git
