@@ -1,6 +1,5 @@
 import importlib
 import sheet_structure
-import os
 
 
 class BinaryDataGenerator:
