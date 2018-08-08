@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='example.proto',
   package='TableProto',
   syntax='proto3',
-  serialized_pb=_b('\n\rexample.proto\x12\nTableProto\"\x80\x01\n\x07\x65xample\x12\x12\n\nint_column\x18\x01 \x01(\x03\x12\x15\n\rstring_column\x18\x02 \x01(\t\x12\x18\n\x10int_array_column\x18\x03 \x03(\x03\x12\x1b\n\x13string_array_column\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x61te_column\x18\x05 \x01(\x03\x62\x06proto3')
+  serialized_pb=_b('\n\rexample.proto\x12\nTableProto\"\x8c\x01\n\x07\x65xample\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nint_column\x18\x02 \x01(\x03\x12\x15\n\rstring_column\x18\x03 \x01(\t\x12\x18\n\x10int_array_column\x18\x04 \x03(\x03\x12\x1b\n\x13string_array_column\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x61te_column\x18\x06 \x01(\x03\x62\x06proto3')
 )
 
 
@@ -33,36 +33,43 @@ _EXAMPLE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='int_column', full_name='TableProto.example.int_column', index=0,
+      name='id', full_name='TableProto.example.id', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='string_column', full_name='TableProto.example.string_column', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='int_column', full_name='TableProto.example.int_column', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='string_column', full_name='TableProto.example.string_column', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='int_array_column', full_name='TableProto.example.int_array_column', index=2,
-      number=3, type=3, cpp_type=2, label=3,
+      name='int_array_column', full_name='TableProto.example.int_array_column', index=3,
+      number=4, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='string_array_column', full_name='TableProto.example.string_array_column', index=3,
-      number=4, type=9, cpp_type=9, label=3,
+      name='string_array_column', full_name='TableProto.example.string_array_column', index=4,
+      number=5, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='date_column', full_name='TableProto.example.date_column', index=4,
-      number=5, type=3, cpp_type=2, label=1,
+      name='date_column', full_name='TableProto.example.date_column', index=5,
+      number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -80,7 +87,7 @@ _EXAMPLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=30,
-  serialized_end=158,
+  serialized_end=170,
 )
 
 DESCRIPTOR.message_types_by_name['example'] = _EXAMPLE

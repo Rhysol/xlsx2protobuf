@@ -19,7 +19,7 @@ def table_to_proto_and_binary(file_path, proto_name, config):
     if not os.path.exists(binary_data_dir):
         os.makedirs(binary_data_dir)
 
-    temp_pb_file_dir = "../pb/"
+    temp_pb_file_dir = "./pb/"
     if config["Path"].get("TempPbFileDir"):
         temp_pb_file_dir = config["Path"]["TempPbFileDir"]
     if not os.path.exists(temp_pb_file_dir):
