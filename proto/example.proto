@@ -9,3 +9,7 @@ message example {
     repeated string string_array_column = 5;
     int64 date_column = 6;
 }
+
+message exampleList {
+    repeated example m_datas = 1;
+}

@@ -16,6 +16,11 @@ class ProtoGenerator:
                                   'message {proto_name} {\n'
         self.element_template = '    {specify_field}{type} {element_name} = {order};\n'
 
+        self.element_list_template = '\n' \
+                                     'message {proto_name}List {\n' \
+                                     '    repeated {proto_name} m_datas = 1;\n' \
+                                     '}\n'
+
     def set_output_dir(self, output_dir):
         self.output_dir = output_dir
 
@@ -47,6 +52,9 @@ class ProtoGenerator:
             element = element.replace('{element_name}', name)
             element = element.replace('{order}', str(count))
             content += element
-        content += '}'
+        content += '}\n'
+        element_list = self.element_list_template
+        element_list = element_list.replace('{proto_name}', self.sheet_structure_obj.sheet_name)
+        content += element_list
         return content
 

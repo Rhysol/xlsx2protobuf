@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='example.proto',
   package='TableProto',
   syntax='proto3',
-  serialized_pb=_b('\n\rexample.proto\x12\nTableProto\"\x8c\x01\n\x07\x65xample\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nint_column\x18\x02 \x01(\x03\x12\x15\n\rstring_column\x18\x03 \x01(\t\x12\x18\n\x10int_array_column\x18\x04 \x03(\x03\x12\x1b\n\x13string_array_column\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x61te_column\x18\x06 \x01(\x03\x62\x06proto3')
+  serialized_pb=_b('\n\rexample.proto\x12\nTableProto\"\x8c\x01\n\x07\x65xample\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nint_column\x18\x02 \x01(\x03\x12\x15\n\rstring_column\x18\x03 \x01(\t\x12\x18\n\x10int_array_column\x18\x04 \x03(\x03\x12\x1b\n\x13string_array_column\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x61te_column\x18\x06 \x01(\x03\"3\n\x0b\x65xampleList\x12$\n\x07m_datas\x18\x01 \x03(\x0b\x32\x13.TableProto.exampleb\x06proto3')
 )
 
 
@@ -90,7 +90,40 @@ _EXAMPLE = _descriptor.Descriptor(
   serialized_end=170,
 )
 
+
+_EXAMPLELIST = _descriptor.Descriptor(
+  name='exampleList',
+  full_name='TableProto.exampleList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='m_datas', full_name='TableProto.exampleList.m_datas', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=172,
+  serialized_end=223,
+)
+
+_EXAMPLELIST.fields_by_name['m_datas'].message_type = _EXAMPLE
 DESCRIPTOR.message_types_by_name['example'] = _EXAMPLE
+DESCRIPTOR.message_types_by_name['exampleList'] = _EXAMPLELIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 example = _reflection.GeneratedProtocolMessageType('example', (_message.Message,), dict(
@@ -99,6 +132,13 @@ example = _reflection.GeneratedProtocolMessageType('example', (_message.Message,
   # @@protoc_insertion_point(class_scope:TableProto.example)
   ))
 _sym_db.RegisterMessage(example)
+
+exampleList = _reflection.GeneratedProtocolMessageType('exampleList', (_message.Message,), dict(
+  DESCRIPTOR = _EXAMPLELIST,
+  __module__ = 'example_pb2'
+  # @@protoc_insertion_point(class_scope:TableProto.exampleList)
+  ))
+_sym_db.RegisterMessage(exampleList)
 
 
 # @@protoc_insertion_point(module_scope)

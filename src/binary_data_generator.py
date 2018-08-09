@@ -6,28 +6,31 @@ class BinaryDataGenerator:
 
     def __init__(self):
         self.output_dir = "../binary_data/"
-        self.pb_objects = []
+        self.pb_object_list = None
         self.pb_module = None
         self.pb_class = None
+        self.pb_class_list = None
 
     def set_output_dir(self, output_dir):
         self.output_dir = output_dir
 
     def generate(self, sheet, sheet_structure_obj):
         self.import_pb_module(sheet_structure_obj)
+        self.pb_object_list = self.pb_class_list()
+        datas = getattr(self.pb_object_list, 'm_datas')
         for row in range(2, sheet.nrows):
-            pb_object = self.pb_class()
+            pb_object = datas.add()
             column_num = len(sheet_structure_obj.columns_name)
             for column in range(0, column_num):
                 cell_value = sheet.cell_value(row, column)
                 self.set_vaule_to_pb_object(pb_object, cell_value, row, column, sheet_structure_obj)
-            self.pb_objects.append(pb_object)
         self.save_data_to_file(sheet_structure_obj.sheet_name)
 
     def import_pb_module(self, sheet_structure_obj):
         module_name = "pb." + sheet_structure_obj.sheet_name + "_pb2"
         self.pb_module = importlib.import_module(module_name)
         self.pb_class = getattr(self.pb_module, sheet_structure_obj.sheet_name)
+        self.pb_class_list = getattr(self.pb_module, sheet_structure_obj.sheet_name + 'List')
 
     def set_vaule_to_pb_object(self, pb_object, cell_value, row, column, sheet_structure_obj):
         column_name = sheet_structure_obj.columns_name[column]
@@ -66,7 +69,6 @@ class BinaryDataGenerator:
 
     def save_data_to_file(self, sheet_name):
         file_name = self.output_dir + sheet_name + ".byte"
-        file = open(file_name, "w")
-        for pb_object in self.pb_objects:
-            file.write(str(pb_object.SerializeToString()) + "\n")
+        file = open(file_name, "wb")
+        file.write(self.pb_object_list.SerializeToString())
         file.close()
